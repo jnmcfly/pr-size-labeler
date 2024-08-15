@@ -49,6 +49,7 @@ jobs:
 
 - `*_label` (`xs_label`, `s_label`…): Adjust size label names
 - `*_diff` (`xs_max_size`, `s_max_size`…): Adjust which amount of changes you consider appropriate for each size based on your project context
+- `*_color` (`#FF0000`): Adjust which color of each label
 - `fail_if_xl`: Set to `'true'` will report GitHub Workflow failure if the PR size is xl allowing to forbid PR merge
 - `message_if_xl`: Let the user(s) know that the PR exceeds the recommended size and what the consequences are
 - `excluded_files`: Regex to ignore files from the line diff count (e.g. `/(\.test|\.spec)\.(js|jsx|ts|tsx)$/`). You can use multiple line input to specify multiple file patterns. For example:
