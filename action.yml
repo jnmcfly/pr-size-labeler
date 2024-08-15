@@ -55,6 +55,27 @@ inputs:
     required: false
     default: 'size/xl'
 
+  xs_color:
+    description: 'Hex color code for xs PR'
+    required: false
+    default: '#00FF00'
+  s_color:
+    description: 'Hex color code for s PR'
+    required: false
+    default: '#FFFF00'
+  m_color:
+    description: 'Hex color code for m PR'
+    required: false
+    default: '#FFA500'
+  l_color:
+    description: 'Hex color code for l PR'
+    required: false
+    default: '#FF4500'
+  xl_color:
+    description: 'Hex color code for xl PR'
+    required: false
+    default: '#FF0000'
+
   fail_if_xl:
     description: 'Report GitHub Workflow failure if the PR size is xl allowing to forbid PR merge'
     required: false

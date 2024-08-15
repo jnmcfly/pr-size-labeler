@@ -1,8 +1,8 @@
 import * as core from '@actions/core';
 import * as github from '@actions/github';
 import { getCurrentPrSize } from './get-current-pr-size';
-import { getPrSizeInputs, Size } from './pr-sizes';
 import { octokit } from './octokit';
+import { getPrSizeInputs, Size } from './pr-sizes';
 
 async function run() {
   try {
@@ -16,6 +16,7 @@ async function run() {
     const currentPrSize = await getCurrentPrSize();
 
     core.info(`Current PR size: ${currentPrSize.label}`);
+    core.info(`Current PR size color: ${currentPrSize.color}`);
 
     const existingLabels: string[] = github.context.payload.pull_request.labels.map((label: any) => label.name);
 
@@ -59,6 +60,7 @@ async function run() {
       ...github.context.repo,
       issue_number: github.context.issue.number,
       labels: [currentPrSize.label],
+      color: [currentPrSize.color],
     });
   } catch (err) {
     const error = err as Error;

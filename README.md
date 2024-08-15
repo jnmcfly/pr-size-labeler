@@ -25,13 +25,18 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           xs_label: 'size/xs'
           xs_diff: '10'
+          xs_color: '#00FF00'
           s_label: 'size/s'
           s_diff: '50'
+          s_color: '#FFFF00'
           m_label: 'size/m'
           m_diff: '250'
+          m_color: '#FFA500'
           l_label: 'size/l'
           l_diff: '500'
+          l_color: '#FF4500'
           xl_label: 'size/xl'
+          xl_color: '#FF0000'
           fail_if_xl: 'false'
           message_if_xl: >
             This PR exceeds the recommended size of 1000 lines.

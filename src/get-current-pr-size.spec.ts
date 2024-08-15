@@ -1,7 +1,6 @@
 import { getCurrentPrSize } from './get-current-pr-size';
 
 import { getMultilineInput } from '@actions/core';
-import { octokit } from './octokit';
 import { getPrSizeInputs } from './pr-sizes';
 
 jest.mock('@actions/github', () => {
@@ -44,17 +43,20 @@ describe('getCurrentPrSize', () => {
       xs: {
         diff: 2,
         label: 'size/xs',
+        color: '#00FF00',
       },
       s: {
         diff: 5,
         label: 'size/s',
+        color: '#FFFF00',
       },
-      m: { diff: 20, label: 'size/m' },
+      m: { diff: 20, label: 'size/m', color: '#FFA500' },
       l: {
         diff: 40,
         label: 'size/l',
+        color: '#FF4500',
       },
-      xl: { diff: 100, label: 'size/xl' },
+      xl: { diff: 100, label: 'size/xl', color: '#FF0000' },
     });
   });
 
@@ -65,7 +67,7 @@ describe('getCurrentPrSize', () => {
     });
 
     it('returns the sum of all changes', () => {
-      expect(prSize).toEqual({ diff: 20, label: 'size/m' });
+      expect(prSize).toEqual({ diff: 20, label: 'size/m', color: '#FFA500' });
     });
   });
 
@@ -76,7 +78,7 @@ describe('getCurrentPrSize', () => {
     });
 
     it('returns the sum of all changes', () => {
-      expect(prSize).toEqual({ diff: 5, label: 'size/s' });
+      expect(prSize).toEqual({ diff: 5, label: 'size/s', color: '#FFFF00' });
     });
   });
 
@@ -87,7 +89,7 @@ describe('getCurrentPrSize', () => {
     });
 
     it('returns the sum of all changes', () => {
-      expect(prSize).toEqual({ diff: 2, label: 'size/xs' });
+      expect(prSize).toEqual({ diff: 2, label: 'size/xs', color: '#00FF00' });
     });
   });
 });
